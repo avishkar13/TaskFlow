@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import TaskDashboard from "./Components/TaskDashboard";
-import TaskDetails from "./components/TaskDetails";
+import TaskDetails from "../Components/TaskDetails";
 import Navbar from "./Components/Navbar";
 
 
