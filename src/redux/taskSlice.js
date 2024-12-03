@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { nanoid } from 'nanoid';
+import { toast } from 'react-toastify';
 
 const loadTasksFromLocalStorage = () => {
   try {
@@ -34,6 +35,16 @@ const taskSlice = createSlice({
       };
       state.tasks.push(newTask);
       localStorage.setItem('tasks', JSON.stringify(state.tasks));
+      toast.success('Task Added', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
     },
     editTask: (state, action) => {
       const { id, updatedData } = action.payload;
@@ -43,12 +54,44 @@ const taskSlice = createSlice({
         task.description = updatedData.description || task.description;
         task.dueDate = updatedData.dueDate || task.dueDate;
         localStorage.setItem('tasks', JSON.stringify(state.tasks));
+        toast.success('Task Edited ', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          });
+      }else{
+        toast.error('Unable to Edit Task', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
       }
+
     },
     deleteTask: (state, action) => {
       const id = action.payload;
       state.tasks = state.tasks.filter((task) => task.id !== id);
       localStorage.setItem('tasks', JSON.stringify(state.tasks));
+      toast.success('Task Deleted !!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
     },
     markAsCompleted: (state, action) => {
       const id = action.payload;
@@ -57,6 +100,16 @@ const taskSlice = createSlice({
         task.completed = true;
         localStorage.setItem('tasks', JSON.stringify(state.tasks));
       }
+      toast.success('Marked as Completed', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
     },
     setFilter: (state, action) => {
       state.filter = action.payload;

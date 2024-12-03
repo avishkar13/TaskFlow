@@ -78,7 +78,7 @@ function TaskList() {
       ) : (
         <>
           {filteredTasks.length > 0 ? (
-            <div className="overflow-y-auto min-h-[34vh] max-h-[34vh] gap-4 pb-4 hide-scrollbar">
+            <div className="overflow-y-auto min-h-[35vh] max-h-[35vh]  gap-4 pb-4 hide-scrollbar">
             {filteredTasks.map((task, index) => (
               <div
                 key={task.id}
@@ -133,7 +133,7 @@ function TaskList() {
           
           
           ) : (
-            <p className="text-center text-slate-400">No tasks available</p>
+            <p className="text-center text-slate-400 min-h-[34vh]">No tasks available</p>
           )}
         </>
       )}

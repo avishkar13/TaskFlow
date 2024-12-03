@@ -1,7 +1,10 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 function ConfirmationModal({ show, onConfirm, onCancel }) {
-  if (!show) return null;
+  if (!show){
+    return null;
+  };
 
   return (
     <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">

@@ -27,15 +27,15 @@ function FilterBar() {
 
       <div className="flex gap-2 xl:gap-4 items-center justify-center">
         <button
-          className={`px-2 py-2 rounded-md text-white text-xs lg:text-lg transition-all duration-300 size-fit ${
-            filter === 'all' ? 'bg-blue-700 hover:bg-blue-800' : 'bg-blue-500 hover:bg-blue-600'
+          className={`px-2 py-2 rounded-md text-white text-xs lg:text-lg transition-all duration-300 size-fit focus:bg-blue-800 ${
+            filter === 'all' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-blue-500 hover:bg-blue-600'
           }`}
           onClick={() => dispatch(setFilter('all'))}
         >
           All Tasks
         </button>
         <button
-          className={`px-2 py-2 rounded-md text-white text-xs lg:text-lg transition-all duration-300 size-fit ${
+          className={`px-2 py-2 rounded-md text-white text-xs lg:text-lg transition-all duration-300 size-fit focus:bg-green-800 ${
             filter === 'completed' ? 'bg-green-600 hover:bg-green-700' : 'bg-green-500 hover:bg-green-600'
           }`}
           onClick={() => dispatch(setFilter('completed'))}
@@ -43,7 +43,7 @@ function FilterBar() {
           Completed
         </button>
         <button
-          className={`px-2 py-2 rounded-md text-white text-xs lg:text-lg transition-all duration-300 size-fit ${
+          className={`px-2 py-2 rounded-md text-white text-xs lg:text-lg transition-all duration-300 size-fit focus:bg-yellow-800 ${
             filter === 'pending' ? 'bg-yellow-600 hover:bg-yellow-700' : 'bg-yellow-500 hover:bg-yellow-600'
           }`}
           onClick={() => dispatch(setFilter('pending'))}
@@ -51,7 +51,7 @@ function FilterBar() {
           Pending
         </button>
         <button
-          className={`px-2 py-2 rounded-md text-white text-xs lg:text-lg transition-all duration-300 size-fit ${
+          className={`px-2 py-2 rounded-md text-white text-xs lg:text-lg transition-all duration-300 size-fit focus:bg-red-800 ${
             filter === 'overdue' ? 'bg-red-600 hover:bg-red-700' : 'bg-red-500 hover:bg-red-600'
           }`}
           onClick={() => dispatch(setFilter('overdue'))}
