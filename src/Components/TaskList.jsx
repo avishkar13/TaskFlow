@@ -118,13 +118,15 @@ function TaskList() {
                     className="bg-yellow-500 px-3 py-1 rounded-full text-white hover:bg-yellow-600 transition-all duration-300"
                     onClick={() => handleEdit(task)}
                   >
-                    <img src="./assets/edit.svg" alt="Edit" className="w-5 h-5" />
+                    <abbr title="Edit"><img src="./assets/edit.svg" alt="Edit" className="w-5 h-5" /></abbr>
+                    
                   </button>
                   <button
                     className="bg-red-500 px-3 py-1 rounded-full text-white hover:bg-red-600 transition-all duration-300"
                     onClick={() => handleDeleteClick(task.id)}
                   >
-                    <img src="./assets/delete.svg" alt="Delete" className="w-5 h-5" />
+                    <abbr title="Delete"> <img src="./assets/delete.svg" alt="Delete" className="w-5 h-5" /></abbr>
+                   
                   </button>
                 </div>
               </div>
