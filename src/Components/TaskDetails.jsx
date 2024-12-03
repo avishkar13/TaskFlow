@@ -3,8 +3,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { markAsCompleted, deleteTask } from "../redux/taskSlice"; 
 import { Link } from "react-router-dom";
-import ConfirmationModal from "./ConfirmationModal";
-import TaskForm from "./TaskForm";
+import ConfirmationModal from "../Components/ConfirmationModal"
+import TaskForm from "../Components/TaskForm";
 
 
 function TaskDetails() {
