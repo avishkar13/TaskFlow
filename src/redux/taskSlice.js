@@ -17,7 +17,7 @@ const loadFilterFromLocalStorage = () => {
 const initialState = {
   tasks: loadTasksFromLocalStorage(),
   filter: loadFilterFromLocalStorage(),
-  searchQuery: '', // Add searchQuery to the initial state
+  searchQuery: '', 
 };
 
 const taskSlice = createSlice({

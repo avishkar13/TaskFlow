@@ -10,8 +10,7 @@ function TaskList() {
   const dispatch = useDispatch();
   const tasks = useSelector((state) => state.tasks.tasks);
   const filter = useSelector((state) => state.tasks.filter);
-  const searchQuery = useSelector((state) => state.tasks.searchQuery); // Get search query from Redux state
-
+  const searchQuery = useSelector((state) => state.tasks.searchQuery); 
   const [editTask, setEditTask] = useState(null);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [taskToDelete, setTaskToDelete] = useState(null);
@@ -31,7 +30,7 @@ function TaskList() {
   };
 
   const handleDragOver = (e) => {
-    e.preventDefault(); // Necessary to allow drop
+    e.preventDefault(); 
   };
 
   const handleDrop = (e, dropIndex) => {
@@ -40,7 +39,7 @@ function TaskList() {
       const reorderedTasks = [...filteredTasks];
       const [draggedTask] = reorderedTasks.splice(dragIndex, 1);
       reorderedTasks.splice(dropIndex, 0, draggedTask);
-      dispatch(reorderTasks(reorderedTasks)); // Dispatch reorder action
+      dispatch(reorderTasks(reorderedTasks)); 
     }
   };
 
@@ -78,11 +77,11 @@ function TaskList() {
       ) : (
         <>
           {filteredTasks.length > 0 ? (
-            <div className="overflow-y-auto min-h-[35vh] max-h-[35vh]  gap-4 pb-4 hide-scrollbar">
+            <div className="overflow-y-auto min-h-[35vh] max-h-[45vh]  gap-4 pb-4 hide-scrollbar">
             {filteredTasks.map((task, index) => (
               <div
                 key={task.id}
-                className={`flex flex-col lg:flex-row justify-between items-start gap-0 md:gap-2 lg:gap-0 w-[90%] mx-auto bg-slate-800 rounded-lg p-4 mb-3 shadow-lg transition-all duration-300 ${
+                className={`flex flex-col lg:flex-row justify-between items-start gap-0 md:gap-2 lg:gap-0 w-[95%] md:w-[72vw] mx-auto bg-slate-800 rounded-lg p-4 mb-3 shadow-lg transition-all duration-300 ${
                   task.completed ? 'bg-green-600' : 'hover:bg-slate-700'
                 }`}
                 draggable

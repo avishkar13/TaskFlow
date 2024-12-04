@@ -5,11 +5,11 @@ import { setFilter, setSearchQuery } from '../redux/taskSlice';
 function FilterBar() {
   const dispatch = useDispatch();
   const filter = useSelector((state) => state.tasks.filter);
-  const [searchQuery, setSearchQueryState] = useState(''); // Local state for search query
+  const [searchQuery, setSearchQueryState] = useState(''); 
 
   const handleSearchChange = (e) => {
-    setSearchQueryState(e.target.value); // Update local state
-    dispatch(setSearchQuery(e.target.value)); // Dispatch the query to Redux store
+    setSearchQueryState(e.target.value); 
+    dispatch(setSearchQuery(e.target.value)); 
   };
 
   return (
