@@ -8,7 +8,7 @@ function ConfirmationModal({ show, onConfirm, onCancel }) {
 
   return (
     <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
-      <div className="bg-slate-200 p-6 rounded-md shadow-lg w-1/3">
+      <div className="bg-slate-200 p-6 rounded-md shadow-lg w-[70vw] md:w-1/3">
         <h3 className="text-xl mb-4">Are you sure you want to delete this task?</h3>
         <div className="flex justify-between">
           <button
