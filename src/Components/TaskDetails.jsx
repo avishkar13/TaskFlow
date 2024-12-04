@@ -55,30 +55,30 @@ function TaskDetails() {
             <h2 className="text-white text-2xl font-bold mb-4 truncate ">{task.title}</h2>
             <p className="text-slate-300 text-lg mb-2 ">{task.description}</p>
             <p className="text-slate-400">Due Date: {new Date(task.dueDate).toLocaleDateString()}</p>
-            <p className={`mb-4 ${task.completed ? "text-green-400" : "text-yellow-400"}`}>
+            <p className={`mb-4 ${task.completed ? "text-green-500" : "text-amber-500"}`}>
               Status: {task.completed ? "Completed" : "Pending"}
             </p>
 
             <div className="flex gap-4 mt-4">
               {!task.completed && (
                 <button
-                  className="bg-green-500 px-4 py-2 rounded-full text-white hover:bg-green-600"
+                   className="bg-green-500 px-3 py-1 rounded-full text-white hover:bg-green-600 transition-all duration-300 hover:scale-105"
                   onClick={handleMarkAsCompleted}
                 >
                   Mark as Complete
                 </button>
               )}
               <button
-                className="bg-yellow-500 px-4 py-2 rounded-full text-white hover:bg-yellow-600"
+                className="bg-yellow-500 px-4 py-2 rounded-full text-white hover:bg-yellow-600 transition-all duration-300 hover:scale-105"
                 onClick={toggleEditMode}
               >
-                Edit
+               <img title="Edit" src="../assets/edit.svg" alt="Edit" className="w-5 h-5" />
               </button>
               <button
-                className="bg-red-500 px-4 py-2 rounded-full text-white hover:bg-red-600"
+                className="bg-red-500 px-4 py-2 rounded-full text-white hover:bg-red-600 transition-all duration-300 hover:scale-105"
                 onClick={handleDeleteClick}
               >
-                Delete
+                <img title="Delete" src="../assets/delete.svg" alt="Delete" className="w-5 h-5" />
               </button>
             </div>
           </>

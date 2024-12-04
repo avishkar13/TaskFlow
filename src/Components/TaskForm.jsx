@@ -110,7 +110,7 @@ function TaskForm({ taskToEdit, closeEditMode }) {
             type="submit"
             className="bg-green-500 flex justify-center  items-center gap-1 md:gap-2 px-3 md:px-8 py-1 rounded-full text-white text-lg font-mono hover:bg-green-600 transition-all duration-300 transform hover:scale-105"
           >
-            <img className="w-5 h-5" src="./assets/save.svg" alt="Save" />
+            <img className="w-5 h-5" src="../assets/save.svg" alt="Save" />
             <span>{taskToEdit ? 'Update' : 'Add'}</span>
           </button>
         </div>

@@ -100,7 +100,9 @@ function TaskList() {
                     <p className="text-sm text-slate-400">
                       Due: {new Date(task.dueDate).toLocaleDateString()}
                     </p>
-                    {task.completed && <p className="text-green-300 text-sm">Completed</p>}
+                    <p className={`${task.completed ? "text-green-500" : "text-amber-500"}`}>
+              Status: {task.completed ? "Completed" : "Pending"}
+            </p>
                   </div>
                 </Link>
           
@@ -117,7 +119,7 @@ function TaskList() {
                     className="bg-yellow-500 px-3 py-1 rounded-full text-white hover:bg-yellow-600 transition-all duration-300"
                     onClick={() => handleEdit(task)}
                   >
-                    <abbr title="Edit"><img src="./assets/edit.svg" alt="Edit" className="w-5 h-5" /></abbr>
+                    <img title="Edit" src="./assets/edit.svg" alt="Edit" className="w-5 h-5" />
                     
                   </button>
                   <button
